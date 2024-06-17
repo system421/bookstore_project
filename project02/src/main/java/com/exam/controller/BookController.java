@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.exam.dto.GoodsDTO;
 import com.exam.dto.MemberDTO;
+import com.exam.service.GoodsService;
 import com.exam.service.MemberService;
 
 
@@ -23,45 +25,31 @@ import com.exam.service.MemberService;
 public class BookController {
 	Logger logger = LoggerFactory.getLogger(getClass());
 	
-	MemberService memberService;
+	GoodsService goodsService;
 
-	public BookController(MemberService memberService) {
-		
-		this.memberService = memberService;
+	
+	public BookController(GoodsService goodsService) {
+		super();
+		this.goodsService = goodsService;
 	}
-
-	@GetMapping("/signup")
+	@GetMapping("/add_book")
 	public String main(ModelMap m) {
-		MemberDTO dto = new MemberDTO();
-		m.addAttribute("memberDTO", dto);
+		GoodsDTO dto = new GoodsDTO();
+		m.addAttribute("GoodsDTO", dto);
 		
-		return "memberForm";
+		return "add_book";
 	}
-	@PostMapping("/signup")
-	public String main(@Valid MemberDTO dto, BindingResult result) {
+	@PostMapping("/add_book")
+	public String main(@Valid GoodsDTO dto, BindingResult result) {
 		if(result.hasErrors()) {
-			return "memberForm";
+			return "add_book";
 		}
 		//DB연동
 		logger.info("logger:signup:{}",dto);
-		memberService.memberAdd(dto);
+		goodsService.bookadd(dto);
 		return "redirect:main";
 	}
-	@GetMapping("/mypage")
-	public String mypage(ModelMap m) {
-		// 세션에 저장된 MemberDTO 얻기
-		MemberDTO dto = (MemberDTO)m.getAttribute("login");
-		logger.info("logger:mypage:{}",dto);
-		
-		
-		
-			String userid = dto.getUserid();
-			MemberDTO searchDTO = memberService.mypage(userid);
-			m.addAttribute("login", searchDTO);
-			return "mypage";
-		
-		
-	}
+	
 	
 	
 }

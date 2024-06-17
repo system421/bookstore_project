@@ -40,7 +40,7 @@
 	                               <a class="nav-link" href="mypage">mypage</a>
 	                            </li>
 	                            <li class="nav-item">
-	                               <a class="nav-link" href="cartList">cartList</a>
+	                               <a class="nav-link" href="add_book">Book Add</a>
 	                            </li>
 	                        </ul>
                         </c:if>

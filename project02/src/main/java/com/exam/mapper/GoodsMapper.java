@@ -11,6 +11,6 @@ public interface GoodsMapper {
 	
 	public List<GoodsDTO> goodsList(String bCategory);
 	public GoodsDTO goodsRetrieve(String bCode);
-	
+	public int bookadd(GoodsDTO dto);
 
 }

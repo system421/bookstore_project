@@ -29,4 +29,10 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsMapper.goodsRetrieve(bCode);
 	}
 
+	@Override
+	public int bookadd(GoodsDTO dto) {
+		
+		return goodsMapper.bookadd(dto);
+	}
+
 }
