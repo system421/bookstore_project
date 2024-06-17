@@ -8,24 +8,20 @@
                         <div class="navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=top">top</a>
+                                    <a class="nav-link" href="main?gCategory=novel">소설</a>
                                 </li>
                             </ul>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=dress">dress</a>
+                                    <a class="nav-link" href="main?gCategory=essay">에세이</a>
                                 </li>
                             </ul>
                               <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=outer">outer</a>
+                                    <a class="nav-link" href="main?gCategory=humanities">인문</a>
                                 </li>
                             </ul>
-                              <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=bottom">bottom</a>
-                                </li>
-                            </ul>
+                      
                         </div>
                     </nav>
                 </div>
