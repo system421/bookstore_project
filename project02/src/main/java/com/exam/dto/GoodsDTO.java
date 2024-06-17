@@ -10,7 +10,6 @@ public class GoodsDTO {
 	String bCode;
 	String bCategory;
 	String bName;
-	String bMemCode;
 	LocalDate bDate;
 	int bPrice;
 	String bInventory;
@@ -20,13 +19,12 @@ public class GoodsDTO {
 	public GoodsDTO() {}
 
 
-	public GoodsDTO(String bCode, String bCategory, String bName, String bMemCode, LocalDate bDate, int bPrice,
+	public GoodsDTO(String bCode, String bCategory, String bName, LocalDate bDate, int bPrice,
 			String bInventory, String bImage) {
 		super();
 		this.bCode = bCode;
 		this.bCategory = bCategory;
 		this.bName = bName;
-		this.bMemCode = bMemCode;
 		this.bDate = bDate;
 		this.bPrice = bPrice;
 		this.bInventory = bInventory;
@@ -64,14 +62,6 @@ public class GoodsDTO {
 	}
 
 
-	public String getbMemCode() {
-		return bMemCode;
-	}
-
-
-	public void setbMemCode(String bMemCode) {
-		this.bMemCode = bMemCode;
-	}
 
 
 	public LocalDate getbDate() {
@@ -116,9 +106,10 @@ public class GoodsDTO {
 
 	@Override
 	public String toString() {
-		return "GoodsDTO [bCode=" + bCode + ", bCategory=" + bCategory + ", bName=" + bName + ", bMemCode=" + bMemCode
-				+ ", bDate=" + bDate + ", bPrice=" + bPrice + ", bInventory=" + bInventory + ", bImage=" + bImage + "]";
+		return "GoodsDTO [bCode=" + bCode + ", bCategory=" + bCategory + ", bName=" + bName + ", bDate=" + bDate
+				+ ", bPrice=" + bPrice + ", bInventory=" + bInventory + ", bImage=" + bImage + "]";
 	}
+
 
 
 
