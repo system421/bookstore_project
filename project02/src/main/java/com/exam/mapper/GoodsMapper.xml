@@ -7,24 +7,26 @@
  
    <!-- 상품목록 -->
    <select id="goodsList" parameterType="string" resultType="GoodsDTO">
-     select gCode,
-            gCategory,
-            gName,
-            gContent,
-            gPrice,
-            gImage
+     select bCode,
+            bName,
+            bMemCode,
+            bDate,
+            bPrice,
+            bInventory,
+            bImage
      from goods
      where gCategory = #{gCategory}
    </select>
    
    <!-- 상품 자세히고비 -->
    <select id="goodsRetrieve" parameterType="string" resultType="GoodsDTO">
-     select gCode,
-            gCategory,
-            gName,
-            gContent,
-            gPrice,
-            gImage
+     select bCode,
+            bName,
+            bMemCode,
+            bDate,
+            bPrice,
+            bInventory,
+            bImage
      from goods
      where gCode = #{gCode}
    </select>

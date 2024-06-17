@@ -1,80 +1,113 @@
 package com.exam.dto;
 
+import java.time.LocalDate;
+
 import org.apache.ibatis.type.Alias;
 
 @Alias("GoodsDTO")
 public class GoodsDTO {
 
-	String gCode;
-	String gCategory;
-	String gName;
-	String gContent;
-	int gPrice;
-	String gImage;
+	String bCode;
+	String bName;
+	String bMemCode;
+	LocalDate bDate;
+	int bPrice;
+	String bInventory;
+	String bImage;
+	
 	
 	public GoodsDTO() {}
 
-	public GoodsDTO(String gCode, String gCategory, String gName, String gContent, int gPrice, String gImage) {
+
+	public GoodsDTO(String bCode, String bName, String bMemCode, LocalDate bDate, int bPrice, String bInventory,
+			String bImage) {
 		super();
-		this.gCode = gCode;
-		this.gCategory = gCategory;
-		this.gName = gName;
-		this.gContent = gContent;
-		this.gPrice = gPrice;
-		this.gImage = gImage;
+		this.bCode = bCode;
+		this.bName = bName;
+		this.bMemCode = bMemCode;
+		this.bDate = bDate;
+		this.bPrice = bPrice;
+		this.bInventory = bInventory;
+		this.bImage = bImage;
 	}
 
-	public String getgCode() {
-		return gCode;
+
+	public String getbCode() {
+		return bCode;
 	}
 
-	public void setgCode(String gCode) {
-		this.gCode = gCode;
+
+	public void setbCode(String bCode) {
+		this.bCode = bCode;
 	}
 
-	public String getgCategory() {
-		return gCategory;
+
+	public String getbName() {
+		return bName;
 	}
 
-	public void setgCategory(String gCategory) {
-		this.gCategory = gCategory;
+
+	public void setbName(String bName) {
+		this.bName = bName;
 	}
 
-	public String getgName() {
-		return gName;
+
+	public String getbMemCode() {
+		return bMemCode;
 	}
 
-	public void setgName(String gName) {
-		this.gName = gName;
+
+	public void setbMemCode(String bMemCode) {
+		this.bMemCode = bMemCode;
 	}
 
-	public String getgContent() {
-		return gContent;
+
+	public LocalDate getbDate() {
+		return bDate;
 	}
 
-	public void setgContent(String gContent) {
-		this.gContent = gContent;
+
+	public void setbDate(LocalDate bDate) {
+		this.bDate = bDate;
 	}
 
-	public int getgPrice() {
-		return gPrice;
+
+	public int getbPrice() {
+		return bPrice;
 	}
 
-	public void setgPrice(int gPrice) {
-		this.gPrice = gPrice;
+
+	public void setbPrice(int bPrice) {
+		this.bPrice = bPrice;
 	}
 
-	public String getgImage() {
-		return gImage;
+
+	public String getbInventory() {
+		return bInventory;
 	}
 
-	public void setgImage(String gImage) {
-		this.gImage = gImage;
+
+	public void setbInventory(String bInventory) {
+		this.bInventory = bInventory;
 	}
+
+
+	public String getbImage() {
+		return bImage;
+	}
+
+
+	public void setbImage(String bImage) {
+		this.bImage = bImage;
+	}
+
 
 	@Override
 	public String toString() {
-		return "GoodsDTO [gCode=" + gCode + ", gCategory=" + gCategory + ", gName=" + gName + ", gContent=" + gContent
-				+ ", gPrice=" + gPrice + ", gImage=" + gImage + "]";
+		return "GoodsDTO [bCode=" + bCode + ", bName=" + bName + ", bMemCode=" + bMemCode + ", bDate=" + bDate
+				+ ", bPrice=" + bPrice + ", bInventory=" + bInventory + ", bImage=" + bImage + "]";
 	}
+	
+
+
 }
