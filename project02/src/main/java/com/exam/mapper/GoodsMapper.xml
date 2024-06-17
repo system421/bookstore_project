@@ -8,6 +8,7 @@
    <!-- 상품목록 -->
    <select id="goodsList" parameterType="string" resultType="GoodsDTO">
      select bCode,
+     		bCategory, 
             bName,
             bMemCode,
             bDate,
@@ -15,12 +16,13 @@
             bInventory,
             bImage
      from goods
-     where gCategory = #{gCategory}
+     where bCategory = #{bCategory}
    </select>
    
    <!-- 상품 자세히고비 -->
    <select id="goodsRetrieve" parameterType="string" resultType="GoodsDTO">
      select bCode,
+     		bCategory, 
             bName,
             bMemCode,
             bDate,
@@ -28,7 +30,7 @@
             bInventory,
             bImage
      from goods
-     where gCode = #{gCode}
+     where bCode = #{bCode}
    </select>
    
 </mapper>

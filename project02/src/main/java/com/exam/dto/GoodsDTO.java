@@ -8,6 +8,7 @@ import org.apache.ibatis.type.Alias;
 public class GoodsDTO {
 
 	String bCode;
+	String bCategory;
 	String bName;
 	String bMemCode;
 	LocalDate bDate;
@@ -19,10 +20,11 @@ public class GoodsDTO {
 	public GoodsDTO() {}
 
 
-	public GoodsDTO(String bCode, String bName, String bMemCode, LocalDate bDate, int bPrice, String bInventory,
-			String bImage) {
+	public GoodsDTO(String bCode, String bCategory, String bName, String bMemCode, LocalDate bDate, int bPrice,
+			String bInventory, String bImage) {
 		super();
 		this.bCode = bCode;
+		this.bCategory = bCategory;
 		this.bName = bName;
 		this.bMemCode = bMemCode;
 		this.bDate = bDate;
@@ -39,6 +41,16 @@ public class GoodsDTO {
 
 	public void setbCode(String bCode) {
 		this.bCode = bCode;
+	}
+
+
+	public String getbCategory() {
+		return bCategory;
+	}
+
+
+	public void setbCategory(String bCategory) {
+		this.bCategory = bCategory;
 	}
 
 
@@ -104,10 +116,13 @@ public class GoodsDTO {
 
 	@Override
 	public String toString() {
-		return "GoodsDTO [bCode=" + bCode + ", bName=" + bName + ", bMemCode=" + bMemCode + ", bDate=" + bDate
-				+ ", bPrice=" + bPrice + ", bInventory=" + bInventory + ", bImage=" + bImage + "]";
+		return "GoodsDTO [bCode=" + bCode + ", bCategory=" + bCategory + ", bName=" + bName + ", bMemCode=" + bMemCode
+				+ ", bDate=" + bDate + ", bPrice=" + bPrice + ", bInventory=" + bInventory + ", bImage=" + bImage + "]";
 	}
-	
 
+
+
+	
+	
 
 }
