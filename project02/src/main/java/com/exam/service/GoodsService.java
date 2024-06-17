@@ -12,6 +12,6 @@ import com.exam.dto.GoodsDTO;
  */
 public interface GoodsService {
 
-	public List<GoodsDTO> goodsList(String gCategory);
-	public GoodsDTO goodsRetrieve(String gCode);
+	public List<GoodsDTO> goodsList(String bCategory);
+	public GoodsDTO goodsRetrieve(String bCode);
 }
