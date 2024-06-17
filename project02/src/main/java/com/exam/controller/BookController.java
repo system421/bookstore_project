@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -40,13 +41,13 @@ public class BookController {
 		return "add_book";
 	}
 	@PostMapping("/add_book")
-	public String main(@Valid GoodsDTO dto, BindingResult result) {
+	public String main(@Valid @ModelAttribute("GoodsDTO") GoodsDTO dto, BindingResult result) {
 		if(result.hasErrors()) {
 			return "add_book";
 		}
 		//DB연동
 		logger.info("logger:signup:{}",dto);
-		//goodsService.bookadd(dto);
+		goodsService.bookadd(dto);
 		return "redirect:main";
 	}
 	
