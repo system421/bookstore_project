@@ -45,6 +45,22 @@
 
   	</insert>
   	
+  	<delete id="bookdelete" parameterType="GoodsDTO">
+       delete from goods
+        where bCode=#{bCode}
+    </delete>
+    
+    <update id="bookupdate" parameterType="GoodsDTO" >
+        update goods
+        set bCode = #{bCode},
+     					bCategory = #{bCategory}, 
+            			bName = #{bName},       
+            			bDate = #{bDate},
+            			bPrice = #{bPrice},
+            			bInventory = #{bInventory},
+            			bImage = #{bImage}) 
+        where bCode=#{bCode}
+     </update>
   	
    
 </mapper>

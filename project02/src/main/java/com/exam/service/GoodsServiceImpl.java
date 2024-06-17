@@ -35,4 +35,16 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsMapper.bookadd(dto);
 	}
 
+	@Override
+	public int bookdelete(GoodsDTO dto) {
+		
+		return goodsMapper.bookdelete(dto);
+	}
+
+	@Override
+	public int bookupdate(GoodsDTO dto) {
+		
+		return goodsMapper.bookupdate(dto);
+	}
+
 }
