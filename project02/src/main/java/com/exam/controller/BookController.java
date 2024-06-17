@@ -40,7 +40,7 @@ public class BookController {
 		return "add_book";
 	}
 	@PostMapping("/add_book")
-	public String main(GoodsDTO dto, BindingResult result) {
+	public String main(@Valid GoodsDTO dto, BindingResult result) {
 		if(result.hasErrors()) {
 			return "add_book";
 		}
