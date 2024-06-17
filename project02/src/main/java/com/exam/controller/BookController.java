@@ -1,5 +1,7 @@
 package com.exam.controller;
 
+import java.time.LocalDate;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -46,6 +48,8 @@ public class BookController {
 			return "add_book";
 		}
 		//DB연동
+		
+		dto.setbDate(LocalDate.now());
 		logger.info("logger:signup:{}",dto);
 		goodsService.bookadd(dto);
 		return "redirect:main";

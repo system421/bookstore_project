@@ -44,6 +44,8 @@
   	                   #{bImage})
 
   	</insert>
+  	
+  	
    
 </mapper>
 
