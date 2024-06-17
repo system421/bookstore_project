@@ -23,24 +23,42 @@
 		    </div>
 		  </div>
 		  <div class="row mb-3">
+		    <label for="username" class="col-sm-2 col-form-label">category</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" path="bCategory" ></input>
+		    </div>
+		  </div>
+		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">name</label>
 		    <div class="col-auto">
 		      <input type="text" class="form-control" path="bName" ></input>
 		    </div>
 		  </div>
-		  <hr>
 		  <div class="row mb-3">
-		      <div class="col-auto">
-			    <label for="sample4_postcode" class="visually-hidden">post</label>
-			    <input type="text" name="post" class="form-control" id="bPrice">
-			  </div>
+		    <label for="username" class="col-sm-2 col-form-label">price</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" path="bPrice" ></input>
+		    </div>
 		  </div>
-
+		  <div class="row mb-3">
+		    <label for="username" class="col-sm-2 col-form-label">inventory</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" path="bInventory" ></input>
+		    </div>
+		  </div>
+		  <div class="row mb-3">
+		    <label for="username" class="col-sm-2 col-form-label">image</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" path="bImage" ></input>
+		    </div>
+		  </div>
 		  <hr>
+
+
 		  </div>
 		  <div class="col-12">
-		    <button type="submit" class="btn btn-primary">Sign in</button>
-		    <button type="reset" class="btn btn-primary">cancel</button>
+		    <button type="submit" class="btn btn-primary">추가</button>
+		    <button type="reset" class="btn btn-primary">취소</button>
 		  </div>
  </form:form>
 	

@@ -34,13 +34,12 @@
       <!-- 회원가입 -->
   	<insert id="bookadd" parameterType="GoodsDTO">
   	  insert into goods (bCode,
-     		bCategory, 
-            bName,       
-            bDate,
-            bPrice,
-            bInventory,
-            bImage
-  	                    ) 
+     					bCategory, 
+            			bName,       
+            			bDate,
+            			bPrice,
+            			bInventory,
+            			bImage) 
   	  values(#{bCode},#{bCategory},#{bName},#{bDate},#{bPrice},#{bInventory},
   	                   #{bImage})
 
