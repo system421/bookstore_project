@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    ${goodsRetrieve}
     <!-- jQuery 설치 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -46,9 +45,9 @@
 		    </div>
 		  </div>
 		  <hr>
-		    <a href="#" class="btn btn-primary mt-3">수정</a>
-		    <a href="#" class="btn btn-primary mt-3">삭제</a>
-		    <a href="#" class="btn btn-primary mt-3">취소</a>
+		    <a href="bookupdate" class="btn btn-primary mt-3">수정</a>
+		    <a href="bookdelete" class="btn btn-primary mt-3">삭제</a>
+		    <a href="main" class="btn btn-primary mt-3">취소</a>
 		  </div>
 		</div>
 	   

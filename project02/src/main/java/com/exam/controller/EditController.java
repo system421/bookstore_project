@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.exam.dto.GoodsDTO;
@@ -24,14 +25,37 @@ public class EditController {
 
 
 	@GetMapping("/bookedit")
-	public String main(@RequestParam(required = false) String bCode,
+	public String bookedit(@RequestParam(required = false) String bCode,
 			ModelMap m) {
 		GoodsDTO dto  = goodsService.bookedit(bCode);
-		logger.info("logger:mypage:{}",dto);
+		logger.info("logger:bookedit:{}",dto);
 		m.addAttribute("bookedit", dto);
 		
 		
 		return "bookedit";
+	}
+	@GetMapping("/bookdelete")
+	public String bookdelete(@RequestParam(required = false) GoodsDTO dto,
+			ModelMap m) {
+//		int n = goodsService.bookdelete(dto);
+		logger.info("logger:bookdelete:{}",dto);
+		logger.info("logger:bookdelete:{}",m.getAttribute("bookedit"));
+		
+		
+		
+		
+		return "redirect:main";
+	}
+	@GetMapping("/bookupdate")
+	public String bookupdate(@RequestParam(required = false) GoodsDTO dto,
+			ModelMap m) {
+//		int n = goodsService.bookupdate(dto);
+		logger.info("logger:bookupdate:{}",dto);
+		logger.info("logger:bookupdate:{}",m.getAttribute("bookedit"));
+		
+		
+		
+		return "redirect:main";
 	}
 	
 }
