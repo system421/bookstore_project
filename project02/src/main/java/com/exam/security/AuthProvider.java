@@ -4,6 +4,8 @@ import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -23,6 +25,7 @@ public class AuthProvider implements AuthenticationProvider {
 
 	@Autowired
 	MemberService memberService;
+	Logger logger = LoggerFactory.getLogger(getClass());
 	
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -31,7 +34,8 @@ public class AuthProvider implements AuthenticationProvider {
 		String passwd = (String)authentication.getCredentials(); // name="passwd" 값
 		
 		
-		MemberDTO mem = memberService.findById(userid);
+		MemberDTO mem = memberService.findById(userid);	
+		logger.info("meme:{}",mem);
 //		String encrptPw = mem.getPasswd();
 		
 		//Authentication 하위클래스
@@ -42,7 +46,7 @@ public class AuthProvider implements AuthenticationProvider {
 			List<GrantedAuthority> list = new ArrayList<>();
 			// ROLE 설정 시 사용됨
 			list.add(new SimpleGrantedAuthority("USER")); // ADMIN
-			
+		
 			//암호화된 비번대신에 raw 비번으로 설정
 			mem.setPasswd(passwd);
 			token = new UsernamePasswordAuthenticationToken(mem, null, list);

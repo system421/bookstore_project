@@ -36,24 +36,35 @@ public class LoginController {
 	
 		return "loginForm";
 	}
-	@PostMapping("/login")	
-	public String login(@RequestParam Map<String, String> m, ModelMap model) {
-		
-		MemberDTO dto = memberService.login(m);
-		if(dto != null) {
-			
-			//세션에 저장
-			model.addAttribute("login",dto);
-			return "redirect:main";
-			
-		}
-		model.addAttribute("errorMessage","id나 비밀번호 확인 필요");
-		return "loginForm";
-		
-	}
+//	@PostMapping("/login")	
+//	public String login(@RequestParam Map<String, String> m, ModelMap model) {
+//		
+//		MemberDTO dto = memberService.login(m);
+//		if(dto != null) {
+//			
+//			//세션에 저장
+//			model.addAttribute("login",dto);
+//			return "redirect:main";
+//			
+//		}
+//		model.addAttribute("errorMessage","id나 비밀번호 확인 필요");
+//		return "loginForm";
+//		
+//	}
 	@GetMapping("/logout")
 	public String logout(SessionStatus status) {
 		status.setComplete();
+		return "redirect:main";
+	}
+	@PostMapping(value={"/login_fail"})
+	public String showlogin_failPage() {
+		logger.info("logger:showlogin_failPage");
+		return "redirect:login";
+	}
+	
+	@PostMapping(value={"/login_success"})
+	public String showlogin_successPage() {
+		logger.info("logger:showlogin_successPage");
 		return "redirect:main";
 	}
 
