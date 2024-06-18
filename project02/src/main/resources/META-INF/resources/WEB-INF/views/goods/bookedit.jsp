@@ -7,20 +7,28 @@
 		$(document).ready(function(){
 			
 			$("#edit").on("click",function(){
-				event.preventDefault();
-				console.log(this.innerText);
+				console.log(this.innerText);;
+				var form = document.querySelector("form")
+				form.action="bookupdate";
+				form.submit();
 			});
+			
+			
 			$("#delete").on("click",function(){
-				event.preventDefault();
-				console.log(this.innerText);
+				console.log(this.innerText);;
+				var form = document.querySelector("form")
+				form.action="bookdelete";
+				form.submit();
+				
+				
 				
 			});
 		});
 </script>
     
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+    <form class="row g-3 m-4"  method="post"> 
 <div class="container">
-    <form class="row g-3 m-4" modelAttribute="goodsDTO" method="post"> 
 		  <div class="row mb-3">
 		    <label for="bCode" class="col-sm-2 col-form-label">code</label>
 		    <div class="col-auto">
@@ -63,8 +71,5 @@
 		    <button type="submit" class="btn btn-primary" id="delete" >삭제</button>
 		    <a href="main" class="btn btn-primary mt-3">취소</a>
 		  </div>
-		</div>
-	   
-	  </div>
+
 	</form>
-</div>

@@ -58,8 +58,8 @@
             			bDate = #{bDate},
             			bPrice = #{bPrice},
             			bInventory = #{bInventory},
-            			bImage = #{bImage}) 
-        where bCode=#{bCode}
+            			bImage = #{bImage} 
+        where  bCode = #{bCode}
      </update>
   	
    

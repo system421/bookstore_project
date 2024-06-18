@@ -34,11 +34,23 @@ public class EditController {
 		
 		return "bookedit";
 	}
-	@PostMapping("/bookedit")
+
+	@PostMapping("/bookdelete")
 	public String bookdelete( GoodsDTO dto, ModelMap m) {
 		int n = goodsService.bookdelete(dto);
 		logger.info("logger:bookdelete:{}",dto);
 		logger.info("logger:bookdelete:{}",m);
+		
+		
+		return "redirect:main";	
+		
+		
+	}
+	@PostMapping("/bookupdate")
+	public String bookupdate( GoodsDTO dto, ModelMap m) {
+		int n = goodsService.bookupdate(dto);
+		logger.info("logger:bookupdate:{}",dto);
+		logger.info("logger:bookupdate:{}",m);
 		
 		
 		return "redirect:main";
