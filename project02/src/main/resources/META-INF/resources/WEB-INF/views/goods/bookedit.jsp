@@ -12,37 +12,37 @@
 		  <div class="row mb-3">
 		    <label for="bCode" class="col-sm-2 col-form-label">code</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bCode"></input>
+		      <input type="text" class="form-control" name="bCode" value="${bookedit.bCode}"></input>
 		    </div>
 		  </div>
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">category</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bCategory" ></input>
+		      <input type="text" class="form-control" name="bCategory" value="${bookedit.bCategory}"></input>
 		    </div>
 		  </div>
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">name</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bName" ></input>
+		      <input type="text" class="form-control" name="bName" value="${bookedit.bName}"></input>
 		    </div>
 		  </div>
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">price</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bPrice" ></input>
+		      <input type="text" class="form-control" name="bPrice" value="${bookedit.bPrice}"></input>
 		    </div>
 		  </div>
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">inventory</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bInventory" ></input>
+		      <input type="text" class="form-control" name="bInventory" value="${bookedit.bInventory}"></input>
 		    </div>
 		  </div>
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">image</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bImage" ></input>
+		      <input type="text" class="form-control" name="bImage" value="${bookedit.bImage}"></input>
 		    </div>
 		  </div>
 		  <hr>
