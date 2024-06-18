@@ -26,7 +26,7 @@
                    success:function(data, status, xhr){
                        console.log("data:", data);
                        console.log("status:", status);
-                       $("#bCode").text(data);
+                       $("#bCodeResult").text(data);
                    },
                    error:function(xhr, status, error){
                        console.log("error:", error);
@@ -40,16 +40,19 @@
 
 </script>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<div class="container">
-    <form:form class="row g-3 m-4" modelAttribute="GoodsDTO" method="post"/> 
+    <form:form class="row g-3 m-4" modelAttribute="GoodsDTO" method="post"> 
+		<div class="container">
 		  <div class="row mb-3">
 		    <label for="bCode" class="col-sm-2 col-form-label">code</label>
 		    <div class="col-auto">
-		      <form:input type="text" class="form-control" name="bCode" id="bCode"/>
+		      <form:input type="text" class="form-control" path="bCode" id="bCode"/>
 		    </div>
 		    <div class="col-auto">
 			    <button type="button" class="btn btn-primary mb-3" id="bcodein">코드중복</button>
   			</div>
+  		   <div class="col-sm-3">
+              <span id="bCodeResult" class="fs-5"></span> <!-- 결과를 표시할 span -->
+           </div>
 		  </div>
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">category</label>
@@ -89,8 +92,5 @@
 		    <button type="submit" class="btn btn-primary">추가</button>
 		    <button type="reset" class="btn btn-primary">취소</button>
 		  </div>
- </form>
-	
-</div>
-
+</form:form >
 
