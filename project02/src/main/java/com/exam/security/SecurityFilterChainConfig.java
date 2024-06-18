@@ -15,7 +15,7 @@ public class SecurityFilterChainConfig {
 		
 		//1. 불필요한 인증제거
 		http.authorizeRequests()
-		    .antMatchers("/login","/webjars/**","/images/**").permitAll()
+		    .antMatchers("/login","/signup","/webjars/**","/images/**").permitAll()
 		    .anyRequest()
 		    .authenticated();
 		
