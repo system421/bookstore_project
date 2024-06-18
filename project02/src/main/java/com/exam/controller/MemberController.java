@@ -4,6 +4,9 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
 
 import com.exam.dto.MemberDTO;
 import com.exam.service.MemberService;
@@ -52,25 +56,25 @@ public class MemberController {
 		if(result.hasErrors()) {
 			return "memberForm";
 		}
+		String encptPw = 
+				new BCryptPasswordEncoder().encode(dto.getPasswd());
+		dto.setPasswd(encptPw);
+		
 		//DB연동
 		logger.info("logger:signup:{}",dto);
 		memberService.memberAdd(dto);
 		return "redirect:main";
 	}
-	@GetMapping("/mypage")
+	@GetMapping(value={"/mypage"})
 	public String mypage(ModelMap m) {
-		// 세션에 저장된 MemberDTO 얻기
-		MemberDTO dto = (MemberDTO)m.getAttribute("login");
-		logger.info("logger:mypage:{}",dto);
-		
-		
-		
-			String userid = dto.getUserid();
-			MemberDTO searchDTO = memberService.mypage(userid);
-			m.addAttribute("login", searchDTO);
-			return "mypage";
-		
-		
+		//AuthProvider에 저장된 Authentication 얻자
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		logger.info("logger:Authentication:{}",auth);
+		MemberDTO xxx = (MemberDTO)auth.getPrincipal();
+		 m.addAttribute("login",xxx);
+		logger.info("logger:member:{}",xxx);
+	
+		return "mypage";
 	}
 	
 	

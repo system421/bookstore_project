@@ -5,19 +5,19 @@
 	
 	$(document).ready(function(){
 	
-		// 회원가입 서브밋
+/* 		// 회원가입 서브밋
 		$("form").on("submit", function(){
 			alert("login submit");
 			this.action="login";  //LoginServlet의 맵핑값
 			this.method="post";
-		});
+		}); */
 		
 	});// ready()
 
 </script>
 
 <div class="container">
-    <form class="row g-3 m-4">
+    <form class="row g-3 m-4" action="auth"  method="post">
 		  <div class="row mb-3">
 		   		<div>${errorMessage }</div>
 		    </div>

@@ -10,7 +10,6 @@
      select bCode,
      		bCategory, 
             bName,
-            bMemCode,
             bDate,
             bPrice,
             bInventory,
@@ -20,11 +19,10 @@
    </select>
    
    <!-- 상품 자세히고비 -->
-   <select id="goodsRetrieve" parameterType="string" resultType="GoodsDTO">
+   <select id="bookedit" parameterType="string" resultType="GoodsDTO">
      select bCode,
      		bCategory, 
-            bName,
-            bMemCode,
+            bName,       
             bDate,
             bPrice,
             bInventory,
@@ -32,6 +30,44 @@
      from goods
      where bCode = #{bCode}
    </select>
+   
+      <!-- 회원가입 -->
+  	<insert id="bookadd" parameterType="GoodsDTO">
+  	  insert into goods (bCode,
+     					bCategory, 
+            			bName,       
+            			bDate,
+            			bPrice,
+            			bInventory,
+            			bImage) 
+  	  values(#{bCode},#{bCategory},#{bName},#{bDate},#{bPrice},#{bInventory},
+  	                   #{bImage})
+
+  	</insert>
+  	
+  	<delete id="bookdelete" parameterType="GoodsDTO">
+       delete from goods
+        where bCode=#{bCode}
+    </delete>
+    
+    <update id="bookupdate" parameterType="GoodsDTO" >
+        update goods
+        set bCode = #{bCode},
+     					bCategory = #{bCategory}, 
+            			bName = #{bName},       
+            			bDate = #{bDate},
+            			bPrice = #{bPrice},
+            			bInventory = #{bInventory},
+            			bImage = #{bImage} 
+        where  bCode = #{bCode}
+     </update>
+     
+     <select id="Codecheck" parameterType="string" resultType="String">
+     select bCode
+     from goods
+     where bCode = #{bCode}
+   </select>
+  	
    
 </mapper>
 

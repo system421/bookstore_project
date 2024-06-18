@@ -12,6 +12,10 @@ import com.exam.dto.GoodsDTO;
  */
 public interface GoodsService {
 
-	public List<GoodsDTO> goodsList(String gCategory);
-	public GoodsDTO goodsRetrieve(String gCode);
+	public List<GoodsDTO> goodsList(String bCategory);
+	public GoodsDTO bookedit(String bCode);
+	public int bookadd(GoodsDTO dto);
+	public int bookdelete(GoodsDTO dto);
+	public int bookupdate(GoodsDTO dto);
+	public String Codecheck(String bCode);
 }

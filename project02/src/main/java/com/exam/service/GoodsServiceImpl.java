@@ -18,15 +18,41 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 
 	@Override
-	public List<GoodsDTO> goodsList(String gCategory) {
+	public List<GoodsDTO> goodsList(String bCategory) {
 		// TODO Auto-generated method stub
-		return goodsMapper.goodsList(gCategory);
+		return goodsMapper.goodsList(bCategory);
 	}
 
 	@Override
-	public GoodsDTO goodsRetrieve(String gCode) {
-		// TODO Auto-generated method stub
-		return goodsMapper.goodsRetrieve(gCode);
+	public GoodsDTO bookedit(String bCode) {
+		
+		return goodsMapper.bookedit(bCode);
 	}
+
+	@Override
+	public int bookadd(GoodsDTO dto) {
+		
+		return goodsMapper.bookadd(dto);
+	}
+
+	@Override
+	public int bookdelete(GoodsDTO dto) {
+		
+		return goodsMapper.bookdelete(dto);
+	}
+
+	@Override
+	public int bookupdate(GoodsDTO dto) {
+		
+		return goodsMapper.bookupdate(dto);
+	}
+
+	@Override
+	public String Codecheck(String bCode) {
+		
+		return goodsMapper.Codecheck(bCode);
+	}
+
+
 
 }
