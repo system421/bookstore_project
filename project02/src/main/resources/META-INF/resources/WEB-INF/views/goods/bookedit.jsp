@@ -3,71 +3,49 @@
     ${goodsRetrieve}
     <!-- jQuery 설치 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-		
-		$("#up").on("click", function(){
-			var gAmount = Number.parseInt($("#gAmount").val());
-			$("#gAmount").val(gAmount+1);
-		});
-		
-		$("#down").on("click", function(){
-			var gAmount = Number.parseInt($("#gAmount").val());
-			if(gAmount==1){
-				$("#gAmount").val(1);
-			}else{
-				$("#gAmount").val(gAmount-1);
-			}
-			
-		});
-		
-		
-	});// ready()
 
-</script>
     
     
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="container">
-	<form class="row g-3 m-4">
-	  <div class="row">    
-		<div class="card" style="width:25rem;">
-		 
-		  <div class="card-body">
-		    <h6 class="card-title">
-		        <span class="fw-bold">제품코드:</span>  
-		       </h6>
-		    <h6 class="card-text">
-		      <span class="fw-bold ">상품명:</span>
-		     </h6>
-		    <h6 class="card-text">
-		      <span class="fw-bold ">가격:</span>
-		       </h6>
-		     <h6 class="card-text">
-		      <span class="fw-bold ">상품옵션:</span>
-		       <select class="select_change" size="1" name="gSize" id="gSize">
-						<option selected value="사이즈선택">사이즈선택</option>
-						<option value="L">L</option>
-						<option value="M">M</option>
-						<option value="S">S</option>
-				</select>
-				<select class="select_change" name="gColor" id="gColor">
-	                <option selected value="색상선택">색상선택</option>
-					<option value="navy">navy</option>
-					<option value="black">black</option>
-					<option value="ivory">ivory</option>
-					<option value="white">white</option>
-					<option value="gray">gray</option>
-				</select>
-				</h6>
-			 <h6 class="card-text">
-			 
-			      <span class="fw-bold ">주문수량:</span>
-			      <input type="text" name="gAmount" value="1" id="gAmount">
-			      <img src="images/up.PNG" id="up"> 
-			      <img src="images/down.PNG" id="down">
-		     
-		      </h6>
+    <form class="row g-3 m-4" modelAttribute="GoodsDTO" method="post"> 
+		  <div class="row mb-3">
+		    <label for="bCode" class="col-sm-2 col-form-label">code</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" name="bCode"></input>
+		    </div>
+		  </div>
+		  <div class="row mb-3">
+		    <label for="username" class="col-sm-2 col-form-label">category</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" name="bCategory" ></input>
+		    </div>
+		  </div>
+		  <div class="row mb-3">
+		    <label for="username" class="col-sm-2 col-form-label">name</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" name="bName" ></input>
+		    </div>
+		  </div>
+		  <div class="row mb-3">
+		    <label for="username" class="col-sm-2 col-form-label">price</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" name="bPrice" ></input>
+		    </div>
+		  </div>
+		  <div class="row mb-3">
+		    <label for="username" class="col-sm-2 col-form-label">inventory</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" name="bInventory" ></input>
+		    </div>
+		  </div>
+		  <div class="row mb-3">
+		    <label for="username" class="col-sm-2 col-form-label">image</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" name="bImage" ></input>
+		    </div>
+		  </div>
+		  <hr>
 		    <a href="#" class="btn btn-primary mt-3">수정</a>
 		    <a href="#" class="btn btn-primary mt-3">삭제</a>
 		    <a href="#" class="btn btn-primary mt-3">취소</a>
