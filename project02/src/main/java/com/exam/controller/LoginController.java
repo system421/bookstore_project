@@ -63,8 +63,10 @@ public class LoginController {
 	}
 	
 	@GetMapping(value={"/login_success"})
-	public String showlogin_successPage() {
+	public String showlogin_successPage(@RequestParam Map<String, String> m, ModelMap model) {
 		logger.info("logger:showlogin_successPage");
+		MemberDTO dto = memberService.login(m);
+		model.addAttribute("login",dto);
 		return "redirect:main";
 	}
 
