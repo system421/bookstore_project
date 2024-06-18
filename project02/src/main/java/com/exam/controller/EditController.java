@@ -24,10 +24,11 @@ public class EditController {
 
 
 	@GetMapping("/bookedit")
-	public String main(@RequestParam(required = false, defaultValue = "novel") String bCategory,
+	public String main(@RequestParam(required = false) String bCode,
 			ModelMap m) {
-//		List<GoodsDTO> goodsList  = goodsService.goodsList(bCategory);
-//		m.addAttribute("goodsList", goodsList);
+		GoodsDTO dto  = goodsService.bookedit(bCode);
+		logger.info("logger:mypage:{}",dto);
+		m.addAttribute("bookedit", dto);
 		
 		
 		return "bookedit";

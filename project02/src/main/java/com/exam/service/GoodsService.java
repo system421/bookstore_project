@@ -13,7 +13,7 @@ import com.exam.dto.GoodsDTO;
 public interface GoodsService {
 
 	public List<GoodsDTO> goodsList(String bCategory);
-	public GoodsDTO goodsRetrieve(String bCode);
+	public GoodsDTO bookedit(String bCode);
 	public int bookadd(GoodsDTO dto);
 	public int bookdelete(GoodsDTO dto);
 	public int bookupdate(GoodsDTO dto);

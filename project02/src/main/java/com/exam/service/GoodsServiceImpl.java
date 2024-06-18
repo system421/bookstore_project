@@ -24,9 +24,9 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 
 	@Override
-	public GoodsDTO goodsRetrieve(String bCode) {
-		// TODO Auto-generated method stub
-		return goodsMapper.goodsRetrieve(bCode);
+	public GoodsDTO bookedit(String bCode) {
+		
+		return goodsMapper.bookedit(bCode);
 	}
 
 	@Override
@@ -46,5 +46,7 @@ public class GoodsServiceImpl implements GoodsService {
 		
 		return goodsMapper.bookupdate(dto);
 	}
+
+
 
 }
