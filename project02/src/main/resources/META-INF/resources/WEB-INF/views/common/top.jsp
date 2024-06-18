@@ -10,7 +10,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="main">Home</a>
                                 </li>
-       
                             </ul>
                         </div>
                         
