@@ -56,5 +56,5 @@ public class LoginController {
 		status.setComplete();
 		return "redirect:main";
 	}
-	
+
 }
