@@ -29,7 +29,7 @@ public class BookController {
 	Logger logger = LoggerFactory.getLogger(getClass());
 	
 	GoodsService goodsService;
-
+//s
 	
 	public BookController(GoodsService goodsService) {
 		super();
