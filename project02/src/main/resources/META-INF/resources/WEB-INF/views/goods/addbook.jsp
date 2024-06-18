@@ -13,18 +13,43 @@
 			this.method="post";
 		}); 
 		
+		// bCode 중복 체크
+		$("#bcodein").on("click", function(){
+			 //jQuery Ajax
+			   $.ajax({
+                   method:"get",
+                   url:"Codecheck",   // MemberIdCheckServlet
+                   dataType:'text', // 응답되는 데이터타입, 반환값(사용가능|사용불가)
+                   data:{
+                	   bCode:$("#bCode").val()
+                   },
+                   success:function(data, status, xhr){
+                       console.log("data:", data);
+                       console.log("status:", status);
+                       $("#bCode").text(data);
+                   },
+                   error:function(xhr, status, error){
+                       console.log("error:", error);
+                   }
+
+               });
+		}); // bCode 중복 체크
+		
 		
 	});// ready()
 
 </script>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="container">
-    <form class="row g-3 m-4" modelAttribute="GoodsDTO" method="post"> 
+    <form:form class="row g-3 m-4" modelAttribute="GoodsDTO" method="post"/> 
 		  <div class="row mb-3">
 		    <label for="bCode" class="col-sm-2 col-form-label">code</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bCode"></input>
+		      <form:input type="text" class="form-control" name="bCode" id="bCode"/>
 		    </div>
+		    <div class="col-auto">
+			    <button type="button" class="btn btn-primary mb-3" id="bcodein">코드중복</button>
+  			</div>
 		  </div>
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">category</label>

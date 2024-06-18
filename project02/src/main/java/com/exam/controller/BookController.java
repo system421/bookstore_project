@@ -55,6 +55,17 @@ public class BookController {
 		return "redirect:main";
 	}
 	
+	@GetMapping("/Codecheck")
+	public @ResponseBody String Codecheck(@RequestParam String bCode) {
+		String chk = goodsService.Codecheck(bCode);
+		
+		String mesg = "사용가능";
+		if(chk!=null) {
+			mesg = "사용불가";
+		}
+		return mesg;
+	}
+	
 	
 	
 }

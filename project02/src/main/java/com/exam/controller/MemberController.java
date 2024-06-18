@@ -64,7 +64,6 @@ public class MemberController {
 		logger.info("logger:mypage:{}",dto);
 		
 		
-		
 			String userid = dto.getUserid();
 			MemberDTO searchDTO = memberService.mypage(userid);
 			m.addAttribute("login", searchDTO);

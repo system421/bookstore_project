@@ -14,5 +14,6 @@ public interface GoodsMapper {
 	public int bookadd(GoodsDTO dto);
 	public int bookdelete(GoodsDTO dto);
 	public int bookupdate(GoodsDTO dto);
+	public String Codecheck(String bCode);
 
 }

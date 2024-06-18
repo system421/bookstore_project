@@ -32,7 +32,7 @@
 		  <div class="row mb-3">
 		    <label for="bCode" class="col-sm-2 col-form-label">code</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bCode" value="${bookedit.bCode}"></input>
+		      <input type="text" class="form-control" name="bCode" value="${bookedit.bCode}" disabled="disabled"></input>
 		    </div>
 		  </div>
 		  <div class="row mb-3">

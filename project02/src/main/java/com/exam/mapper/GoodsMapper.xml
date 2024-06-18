@@ -61,6 +61,12 @@
             			bImage = #{bImage} 
         where  bCode = #{bCode}
      </update>
+     
+     <select id="Codecheck" parameterType="string" resultType="String">
+     select bCode
+     from goods
+     where bCode = #{bCode}
+   </select>
   	
    
 </mapper>

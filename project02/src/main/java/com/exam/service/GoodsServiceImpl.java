@@ -47,6 +47,12 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsMapper.bookupdate(dto);
 	}
 
+	@Override
+	public String Codecheck(String bCode) {
+		
+		return goodsMapper.Codecheck(bCode);
+	}
+
 
 
 }
