@@ -3,11 +3,24 @@
     <!-- jQuery 설치 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    
+ <script type="text/javascript">
+		$(document).ready(function(){
+			
+			$("#edit").on("click",function(){
+				event.preventDefault();
+				console.log(this.innerText);
+			});
+			$("#delete").on("click",function(){
+				event.preventDefault();
+				console.log(this.innerText);
+				
+			});
+		});
+</script>
     
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="container">
-    <form class="row g-3 m-4" modelAttribute="GoodsDTO" method="post"> 
+    <form class="row g-3 m-4" modelAttribute="goodsDTO" method="post"> 
 		  <div class="row mb-3">
 		    <label for="bCode" class="col-sm-2 col-form-label">code</label>
 		    <div class="col-auto">
@@ -45,8 +58,9 @@
 		    </div>
 		  </div>
 		  <hr>
-		    <a href="bookupdate" class="btn btn-primary mt-3">수정</a>
-		    <a href="bookdelete" class="btn btn-primary mt-3">삭제</a>
+		
+		    <button type="submit" class="btn btn-primary" id="edit"  >수정</button>
+		    <button type="submit" class="btn btn-primary" id="delete" >삭제</button>
 		    <a href="main" class="btn btn-primary mt-3">취소</a>
 		  </div>
 		</div>
