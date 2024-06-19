@@ -29,7 +29,7 @@
 				console.dir($("#theFile")[0].files[0]);
 				$("#bImage").val(fname);
 				$("#theText").val(fname);
-				$("#temp").src=$("#theFile")[0].files[0].File;
+			
 			
 				
 			
