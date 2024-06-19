@@ -27,7 +27,7 @@
 				let fname = $("#theFile")[0].files[0].name;
 				console.log($("#theFile")[0].files[0].name);
 				console.dir($("#theFile")[0].files[0]);
-				$("#bImage").val(fname);
+				$("#bImage").val(fname);	
 			
 				
 			
