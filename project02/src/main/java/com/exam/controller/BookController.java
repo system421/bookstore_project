@@ -53,7 +53,7 @@ public class BookController {
 		//DB연동
 		
 		dto.setbDate(LocalDate.now());
-		logger.info("logger:signup:{}",dto.getbCategory());
+		logger.info("logger:signup:{}",dto);
 		//goodsService.bookadd(dto);
 		return "redirect:main";
 	}
