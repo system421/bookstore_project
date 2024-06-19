@@ -28,6 +28,7 @@
                 	   userid:$("#userid").val()
                    },
                    success:function(data, status, xhr){
+                	   
                        console.log("data:", data);
                        console.log("status:", status);
                        $("#idcheck").text(data);

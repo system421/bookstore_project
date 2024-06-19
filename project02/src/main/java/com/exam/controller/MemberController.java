@@ -42,6 +42,7 @@ public class MemberController {
 		if(dto!=null) {
 			mesg = "사용불가";
 		}
+		logger.info("idcheck:{}",mesg);
 		return mesg;
 	}
 	@GetMapping("/signup")
