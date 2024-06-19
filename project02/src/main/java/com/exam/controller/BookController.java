@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.exam.dto.FileDTO;
 import com.exam.dto.GoodsDTO;
 import com.exam.dto.MemberDTO;
+import com.exam.dto.UploadDTO;
 import com.exam.service.GoodsService;
 import com.exam.service.MemberService;
 
@@ -32,26 +34,27 @@ public class BookController {
 //sss
 	
 	public BookController(GoodsService goodsService) {
-		super();
+		
 		this.goodsService = goodsService;
 	}
 	@GetMapping("/add_book")
 	public String main(ModelMap m) {
-		GoodsDTO dto = new GoodsDTO();
-		m.addAttribute("GoodsDTO", dto);
+		FileDTO fdto = new FileDTO();
+		m.addAttribute("FileDTO", fdto);
 		
 		return "add_book";
 	}
 	@PostMapping("/add_book")
-	public String main(@Valid @ModelAttribute("GoodsDTO") GoodsDTO dto, BindingResult result) {
+	public String main(@Valid @ModelAttribute("FileDTO") FileDTO dto, BindingResult result) {
 		if(result.hasErrors()) {
+			logger.info("error:{}",result);
 			return "add_book";
 		}
 		//DB연동
 		
 		dto.setbDate(LocalDate.now());
-		logger.info("logger:signup:{}",dto);
-		goodsService.bookadd(dto);
+		logger.info("logger:signup:{}",dto.getbCategory());
+		//goodsService.bookadd(dto);
 		return "redirect:main";
 	}
 	
