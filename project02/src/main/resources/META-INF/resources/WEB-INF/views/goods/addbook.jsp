@@ -81,7 +81,8 @@
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">image</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bImage" ></input>
+		      
+		      <input type="file" class="btn btn-primary" name="theFile" id="theFile"><br>
 		    </div>
 		  </div>
 		  <hr>
