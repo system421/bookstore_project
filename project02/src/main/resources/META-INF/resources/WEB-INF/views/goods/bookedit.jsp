@@ -27,7 +27,9 @@
 				let fname = $("#theFile")[0].files[0].name;
 				console.log($("#theFile")[0].files[0].name);
 				console.dir($("#theFile")[0].files[0]);
-				$("#bImage").val(fname);	
+				$("#bImage").val(fname);
+				$("#theText").val(fname);
+				$("#temp").src=$("#theFile")[0].files[0].File;
 			
 				
 			
@@ -38,7 +40,7 @@
 
     
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-    <form class="row g-3 m-4"  method="post"> 
+    <form class="row g-3 m-4"  method="post" enctype="multipart/form-data"> 
 <div class="container">
 		  <div class="row mb-3">
 		    <label for="bCode" class="col-sm-2 col-form-label" hidden="hidden">code</label>
@@ -76,8 +78,9 @@
 		    <label for="username" class="col-sm-2 col-form-label">image</label>
 		    <div class="col-auto">
 		      <input type="text" class="form-control" id="bImage" name="bImage" value="${bookedit.bImage}" hidden="hidden"></input>
-		      <img src="images/items/${bookedit.bImage}" width="200">
+		     
 		      <input type="file" class="btn btn-primary" name="theFile" id="theFile"><br>
+		      <input type="text" class="btn btn-primary" name="theText" id="theText" hidden="hidden"><br>
 		    </div>
 		  </div>
 		  <hr>
