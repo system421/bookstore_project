@@ -31,10 +31,19 @@
                    error:function(xhr, status, error){
                        console.log("error:", error);
                    }
+                   
+       		
 
                });
 		}); // bCode 중복 체크
+		$("#theFile").on("change",function(){
+			let fname = $("#theFile")[0].files[0].name;
+			console.log($("#theFile")[0].files[0].name);
+			console.dir($("#theFile")[0].files[0]);
+			$("#bImage").val(fname);	
 		
+			
+		});
 		
 	});// ready()
 
@@ -81,7 +90,7 @@
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">image</label>
 		    <div class="col-auto">
-		      
+		         <input type="text" class="form-control" id="bImage" name="bImage" hidden="hidden" ></input>
 		      <input type="file" class="btn btn-primary" name="theFile" id="theFile"><br>
 		    </div>
 		  </div>
