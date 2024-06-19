@@ -76,7 +76,7 @@
 		    <label for="username" class="col-sm-2 col-form-label">image</label>
 		    <div class="col-auto">
 		      <input type="text" class="form-control" id="bImage" name="bImage" value="${bookedit.bImage}" hidden="hidden"></input>
-		      <img src="images/items/${bookedit.bImage}.jpg" width="200">
+		      <img src="images/items/${bookedit.bImage}" width="200">
 		      <input type="file" class="btn btn-primary" name="theFile" id="theFile"><br>
 		    </div>
 		  </div>
