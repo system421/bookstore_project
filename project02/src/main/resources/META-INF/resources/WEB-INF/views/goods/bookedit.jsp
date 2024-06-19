@@ -25,6 +25,7 @@
 			});
 		});
 </script>
+
     
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
     <form class="row g-3 m-4"  method="post"> 
@@ -59,10 +60,12 @@
 		      <input type="text" class="form-control" name="bInventory" value="${bookedit.bInventory}"></input>
 		    </div>
 		  </div>
+		  
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">image</label>
 		    <div class="col-auto">
 		      <img src="images/items/${bookedit.bImage}.jpg" width="200">
+		      <input type="file" class="btn btn-primary" name="theFile"><br>
 		    </div>
 		  </div>
 		  <hr>
