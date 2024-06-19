@@ -96,7 +96,7 @@
 		      <input type="text" class="btn btn-primary" name="theText" id="theText" hidden="hidden"><br>
 		    </div>
 		  </div>
-		  <hr>
+		  <hr> 
 
 
 		  </div>

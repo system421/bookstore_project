@@ -34,7 +34,7 @@ public class BookController {
 	Logger logger = LoggerFactory.getLogger(getClass());
 	
 	GoodsService goodsService;
-//sss
+//
 	
 	public BookController(GoodsService goodsService) {
 		
