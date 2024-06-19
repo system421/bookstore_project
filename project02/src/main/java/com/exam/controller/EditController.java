@@ -1,5 +1,6 @@
 package com.exam.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -48,7 +49,8 @@ public class EditController {
 	}
 	@PostMapping("/bookupdate")
 	public String bookupdate( GoodsDTO dto, ModelMap m) {
-		int n = goodsService.bookupdate(dto);
+		//int n = goodsService.bookupdate(dto);
+		dto.setbDate(LocalDate.now());
 		logger.info("logger:bookupdate:{}",dto);
 		logger.info("logger:bookupdate:{}",m);
 		
