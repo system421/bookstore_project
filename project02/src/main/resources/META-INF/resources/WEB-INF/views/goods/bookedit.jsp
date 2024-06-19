@@ -69,7 +69,8 @@
 		
 		    <button type="submit" class="btn btn-primary" id="edit"  >수정</button>
 		    <button type="submit" class="btn btn-primary" id="delete" >삭제</button>
-		    <a href="main" class="btn btn-primary mt-3">취소</a>
+		    <input type="button" class="btn btn-primary" value="취소" onclick="location.href='main'" >  
+		    
 		  </div>
 
 	</form>
