@@ -28,6 +28,7 @@
                 	   userid:$("#userid").val()
                    },
                    success:function(data, status, xhr){
+                	   
                        console.log("data:", data);
                        console.log("status:", status);
                        $("#idcheck").text(data);
@@ -38,7 +39,7 @@
 
                });
 		}); // id 중복 체크
-		
+		//
 		// 회원가입 서브밋
 	/*	$("form").on("submit", function(){
 			alert("memberForm submit");
