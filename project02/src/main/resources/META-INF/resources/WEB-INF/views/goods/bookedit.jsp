@@ -62,7 +62,7 @@
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">image</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bImage" value="${bookedit.bImage}"></input>
+		      <img src="images/items/${bookedit.bImage}.jpg" width="200">
 		    </div>
 		  </div>
 		  <hr>
