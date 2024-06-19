@@ -39,7 +39,7 @@
 
                });
 		}); // id 중복 체크
-		
+		//
 		// 회원가입 서브밋
 	/*	$("form").on("submit", function(){
 			alert("memberForm submit");
