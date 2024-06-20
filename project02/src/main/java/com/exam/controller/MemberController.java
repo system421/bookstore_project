@@ -77,6 +77,17 @@ public class MemberController {
 	
 		return "mypage";
 	}
-	
+	@PostMapping(value={"/mypage"})
+	public String mypage2( MemberDTO dto) {
+		logger.info("mypage: test");
+		String encptPw = 
+				new BCryptPasswordEncoder().encode(dto.getPasswd());
+		dto.setPasswd(encptPw);
+		
+		//DB연동
+		logger.info("logger:signup:{}",dto);
+		memberService.memberupdate(dto);
+		return "redirect:main";
+	}
 	
 }
