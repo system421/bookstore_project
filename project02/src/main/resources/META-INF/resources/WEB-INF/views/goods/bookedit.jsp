@@ -3,6 +3,19 @@
     <!-- jQuery 설치 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+<style>
+	#bInventory{
+		 width : 202.4px; 
+		 height:37.6px;
+		 border-color : rgb(206, 212, 218);
+		 border-style : solid;
+		 border-width : 0.8px;
+		 border-radius : 4px;
+	}
+</style>
+
+
+
  <script type="text/javascript">
 		$(document).ready(function(){
 			
@@ -62,6 +75,8 @@
 			});
 		});
 </script>
+
+
 
 <!--  -->
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
