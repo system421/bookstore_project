@@ -6,6 +6,17 @@
 <mapper namespace="com.exam.mapper.GoodsMapper">
  
    <!-- 상품목록 -->
+   <select id="allgoodsList" resultType="GoodsDTO">
+     select bCode,
+     		bCategory, 
+            bName,
+            bDate,
+            bPrice,
+            bInventory,
+            bImage
+     from goods
+   </select>
+   <!-- 상품목록 -->
    <select id="goodsList" parameterType="string" resultType="GoodsDTO">
      select bCode,
      		bCategory, 
