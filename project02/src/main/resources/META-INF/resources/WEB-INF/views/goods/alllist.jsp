@@ -5,29 +5,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
  
  
- <script type="text/javascript">
-		$(document).ready(function(){
-			
-			$("#delete").on("click",function(){
-				 $.ajax({
-		                type: "POST",
-		                url: "bookdelete",
-		                data: {
-		                	bCode: $("#param1").val(),
-		                    param2: $("#param2").val()
-		                },
-		                success: function(response) {
-		                    $("#result").html(response);
-		                }
-		            });
-				
-				
-				
-			});
-			
-		
-	});
-</script>
   <div class="TodoApp">
   <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
  
@@ -38,6 +15,7 @@
                             <tr>
                            		<th>번호</th>
                                 <th>책 코드</th>
+                                <th>책 카테고리</th>
                                 <th>책 이미지</th>
                                 <th>책 이름</th>
                                 <th>책 수량</th>
@@ -52,22 +30,17 @@
 						 <tr>
 						 			<td> ${status.count}</td>
 					                <td id="bcode">${dto.bCode}</td> 
+					                <td id="bCategory">${dto.bCategory}</td> 
                                     <td id="bImage"><img src="images/items/${dto.bImage}" width="200"></td>
                                     <td id="bName">${dto.bName}</td>
                                     <td id="bInventory">${dto.bInventory}</td>
                                     <td id="bPrice">${dto.bPrice}</td>
                                     <td id="bDate">${dto.bDate}</td>
-                                    <td> <a id="delete" href="bookdelete" class="btn btn-warning" >Delete</a> </td>
+                                    <td> <a id="delete" href="bookdeleteone?bCode=${dto.bCode}" class="btn btn-warning" >Delete</a> </td>
 						</tr>
 						</form>
 				      </c:forEach>
-					    <tr>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					    </tr>
+	
                     </tbody>
 
                   </table>

@@ -55,6 +55,17 @@ public class EditController {
 		
 		
 	}
+	@GetMapping("/bookdeleteone")
+	public String bookdeleteone( @RequestParam String bCode) {
+		GoodsDTO dto = goodsService.bookedit(bCode);
+		int n = goodsService.bookdelete(dto);
+		logger.info("logger:bookdelete:{}",dto);
+		
+		
+		return "redirect:AllList";	
+		
+		
+	}
 	@PostMapping("/bookupdate")
 	public String bookupdate( FileDTO dto, ModelMap m) {
 		GoodsDTO gdto = new GoodsDTO(dto.getbCode(), dto.getbCategory(), 
