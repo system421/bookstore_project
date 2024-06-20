@@ -18,7 +18,7 @@ import com.exam.dto.FileDTO;
 import com.exam.dto.GoodsDTO;
 import com.exam.dto.UploadDTO;
 import com.exam.service.GoodsService;
-
+//
 @Controller
 public class EditController {
 	Logger logger = LoggerFactory.getLogger(getClass());
