@@ -3,23 +3,31 @@
 <script src="webjars/jquery/3.7.1/jquery.min.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container">
-    <form class="row g-3 m-4">
+    <form class="row g-3 m-4" action="mypage" method="post">
 		  <div class="row mb-3">
 		    <label for="userid" class="col-sm-2 col-form-label">	아이디</label>
 		    <div class="col-auto">
 		      <input type="text" class="form-control" id="userid" name="userid" 
 		       value="${login.userid}"
-		       disabled="disabled">
+		       readonly="readonly">
+		    </div>
+		  </div>
+		  <div class="row mb-3">
+		    <label for="userid" class="col-sm-2 col-form-label">	유저이름</label>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" id="username" name="username" 
+		       value="${login.userid}"
+		       >
 		    </div>
 		  </div>
 		
 		  <div class="row mb-3">
-		    <label for="username" class="col-sm-2 col-form-label">이름</label>
+		    <label for="passwd" class="col-sm-2 col-form-label">패스워드</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="username" 
-		      id="username"
-		       value="${login.username}"
-		       disabled="disabled">
+		      <input type="text" class="form-control" name="passwd" 
+		      id="passwd"
+		       value="${login.passwd}"
+		       >
 		    </div>
 		  </div>
 		  <hr>

@@ -10,6 +10,7 @@ import com.exam.dto.GoodsDTO;
 public interface GoodsMapper {
 	
 	public List<GoodsDTO> goodsList(String bCategory);
+	public List<GoodsDTO> allgoodsList();
 	public GoodsDTO bookedit(String bCode);
 	public int bookadd(GoodsDTO dto);
 	public int bookdelete(GoodsDTO dto);

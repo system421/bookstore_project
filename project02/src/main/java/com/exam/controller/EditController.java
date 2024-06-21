@@ -18,7 +18,7 @@ import com.exam.dto.FileDTO;
 import com.exam.dto.GoodsDTO;
 import com.exam.dto.UploadDTO;
 import com.exam.service.GoodsService;
-
+//
 @Controller
 public class EditController {
 	Logger logger = LoggerFactory.getLogger(getClass());
@@ -55,6 +55,17 @@ public class EditController {
 		
 		
 	}
+	@GetMapping("/bookdeleteone")
+	public String bookdeleteone( @RequestParam String bCode) {
+		GoodsDTO dto = goodsService.bookedit(bCode);
+		int n = goodsService.bookdelete(dto);
+		logger.info("logger:bookdelete:{}",dto);
+		
+		
+		return "redirect:AllList";	
+		
+		
+	}
 	@PostMapping("/bookupdate")
 	public String bookupdate( FileDTO dto, ModelMap m) {
 		GoodsDTO gdto = new GoodsDTO(dto.getbCode(), dto.getbCategory(), 
@@ -74,7 +85,7 @@ public class EditController {
 		
 		// 서버의 물리적인 디렉터리에 파일 저장 예:c:\\upload
 		// 파일이 저장할 경로만 알려줌
-		File f = new File("D:\\project2\\project02\\src\\main\\resources\\static\\images\\items", fileName);
+		File f = new File("C:\\springboot_study\\sts-4.22.1.RELEASE\\workspace\\bookstore_project\\project02\\src\\main\\resources\\static\\images\\items", fileName);
 		try {
 			theFile.transferTo(f);
 		} catch (IllegalStateException e) {
@@ -84,8 +95,8 @@ public class EditController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		gdto.setbDate(LocalDate.now());
 		int n = goodsService.bookupdate(gdto);
-		dto.setbDate(LocalDate.now());
 		logger.info("logger:bookupdate:{}",gdto);
 		logger.info("logger:bookupdate:{}",m);
 		

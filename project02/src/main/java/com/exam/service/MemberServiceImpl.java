@@ -46,4 +46,10 @@ public class MemberServiceImpl implements MemberService {
 		return memberMapper.findById(userid);
 	}
 
+	@Override
+	public int memberupdate(MemberDTO dto) {
+		// TODO Auto-generated method stub
+		return memberMapper.memberupdate(dto);
+	}
+
 }

@@ -46,6 +46,9 @@
 	                            <li class="nav-item">
 	                               <a class="nav-link" href="add_book">Book Add</a>
 	                            </li>
+	                            <li class="nav-item">
+	                               <a class="nav-link" href="AllList">Alllist</a>
+	                            </li>
 	                        </ul>
                       
                         </sec:authorize>	

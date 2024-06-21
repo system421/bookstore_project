@@ -3,6 +3,19 @@
     <!-- jQuery 설치 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+<style>
+	#bInventory{
+		 width : 202.4px; 
+		 height:37.6px;
+		 border-color : rgb(206, 212, 218);
+		 border-style : solid;
+		 border-width : 0.8px;
+		 border-radius : 4px;
+	}
+</style>
+
+<!--  -->
+
  <script type="text/javascript">
 		$(document).ready(function(){
 			
@@ -23,12 +36,37 @@
 				
 				
 			});
+			$("#up").on("click",function(){
+				
+				let value = Number.parseInt($("#bInventory").val());
+				let value2 = $("#bInventory").val();
+				value += 1;
+				console.log("up");
+				console.log(value);
+				console.log(value2);
+				$("#bInventory").val(value);
+				
+				
+			});
+			$("#down").on("click",function(){
+				let value =Number.parseInt($("#bInventory").val());
+				let value2 = $("#bInventory").val();
+				if(value <= 1)
+				{
+					value = 1;	
+				}else{
+					value -= 1;
+				}
+				console.log("down");
+				console.log(value);
+				console.log(value2);
+				$("#bInventory").val(value);
+				
+			});
 			$("#theFile").on("change",function(){
-				let fname = $("#theFile")[0].files[0].name;
-				console.log($("#theFile")[0].files[0].name);
-				console.dir($("#theFile")[0].files[0]);
-				$("#bImage").val(fname);
-				$("#theText").val(fname);
+				let cur_inven = $("#bInventory").val
+				
+				$("#bInventory").val
 			
 			
 				
@@ -38,7 +76,9 @@
 		});
 </script>
 
-    
+
+
+<!--  -->
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
     <form class="row g-3 m-4"  method="post" enctype="multipart/form-data"> 
 <div class="container">
@@ -67,11 +107,18 @@
 		      <input type="text" class="form-control" name="bPrice" value="${bookedit.bPrice}"></input>
 		    </div>
 		  </div>
+		
 		  <div class="row mb-3">
+		  	  
 		    <label for="username" class="col-sm-2 col-form-label">inventory</label>
 		    <div class="col-auto">
-		      <input type="text" class="form-control" name="bInventory" value="${bookedit.bInventory}"></input>
+		    
+		    <input type="text" id="bInventory"  name="bInventory" value="${bookedit.bInventory}">  
+		    <img src="images/up.PNG" id="up"> 
+			<img src="images/down.PNG" id="down">
+		    
 		    </div>
+			
 		  </div>
 		  
 		  <div class="row mb-3">

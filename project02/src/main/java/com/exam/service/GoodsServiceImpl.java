@@ -53,6 +53,12 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsMapper.Codecheck(bCode);
 	}
 
+	@Override
+	public List<GoodsDTO> allgoodsList() {
+		// TODO Auto-generated method stub
+		return goodsMapper.allgoodsList();
+	}
+
 
 
 }

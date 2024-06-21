@@ -18,4 +18,5 @@ public interface GoodsService {
 	public int bookdelete(GoodsDTO dto);
 	public int bookupdate(GoodsDTO dto);
 	public String Codecheck(String bCode);
+	public List<GoodsDTO> allgoodsList();
 }
