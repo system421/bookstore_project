@@ -21,7 +21,7 @@ import com.exam.service.GoodsService;
 //
 @Controller
 public class EditController {
-	Logger logger = LoggerFactory.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	GoodsService goodsService;
 	
 	
