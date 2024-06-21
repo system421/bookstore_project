@@ -24,8 +24,8 @@ import com.exam.service.MemberService;
 public class AuthProvider implements AuthenticationProvider {
 
 	@Autowired
-	MemberService memberService;
-	Logger logger = LoggerFactory.getLogger(getClass());
+	private MemberService memberService;
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {

@@ -8,13 +8,13 @@ import org.springframework.web.multipart.MultipartFile;
 @Alias("GoodsDTO")
 public class GoodsDTO {
 
-	String bCode;
-	String bCategory;
-	String bName;
-	LocalDate bDate;
-	int bPrice;
-	String bInventory;
-	String bImage;
+	private String bCode;
+	private String bCategory;
+	private String bName;
+	private LocalDate bDate;
+	private int bPrice;
+	private String bInventory;
+	private String bImage;
 	
 	
 	

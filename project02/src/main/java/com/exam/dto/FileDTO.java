@@ -6,15 +6,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class FileDTO {
 	
-	String theText;
-	MultipartFile theFile;
-	String bCode;
-	String bCategory;
-	String bName;
-	LocalDate bDate;
-	int bPrice;
-	String bInventory;
-	String bImage;
+	
+	private String theText;
+	private MultipartFile theFile;
+	private String bCode;
+	private String bCategory;
+	private String bName;
+	private LocalDate bDate;
+	private int bPrice;
+	private String bInventory;
+	private String bImage;
 	public FileDTO() {
 		// TODO Auto-generated constructor stub
 	}
