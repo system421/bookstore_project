@@ -22,6 +22,7 @@
 			$("#edit").on("click",function(){
 				console.log(this.innerText);;
 				var form = document.querySelector("form")
+				
 				form.action="bookupdate";
 				form.submit();
 			});

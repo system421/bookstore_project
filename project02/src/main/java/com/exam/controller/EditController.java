@@ -69,19 +69,17 @@ public class EditController {
 	@PostMapping("/bookupdate")
 	public String bookupdate( FileDTO dto, ModelMap m) {
 		GoodsDTO gdto = new GoodsDTO(dto.getbCode(), dto.getbCategory(), 
-				dto.getbName(), dto.getbDate(), dto.getbPrice(), dto.getbInventory(), dto.getbImage());
-		String theText = dto.getTheText();
+				dto.getbName(), dto.getbDate(), dto.getbPrice(), dto.getbInventory(), dto.getTheFile().getOriginalFilename());
+		String theText = dto.getTheFile().getOriginalFilename();
 		MultipartFile theFile = dto.getTheFile();
 		long size = theFile.getSize();
 		String name = theFile.getName();
 		String fileName = theFile.getOriginalFilename();
 		String contentType = theFile.getContentType();
 		logger.info("logger:upload:{}", dto);
-		logger.info("logger:theText:{}", theText);
-		logger.info("logger:size:{}", size);
-		logger.info("logger:name:{}", name);
-		logger.info("logger:fileName:{}", fileName);
-		logger.info("logger:contentType:{}", contentType);
+		logger.info("logger:upload:{}", dto.getTheText());
+		logger.info("logger:upload:{}", gdto.getbImage());
+		
 		
 		// 서버의 물리적인 디렉터리에 파일 저장 예:c:\\upload
 		// 파일이 저장할 경로만 알려줌

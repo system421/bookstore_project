@@ -1,5 +1,7 @@
 package com.exam.controller;
 
+
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -15,7 +17,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
-
 
 import com.exam.dto.MemberDTO;
 import com.exam.service.MemberService;
@@ -78,7 +79,7 @@ public class MemberController {
 		return "mypage";
 	}
 	@PostMapping(value={"/mypage"})
-	public String mypage2( MemberDTO dto) {
+	public String mypage2( MemberDTO dto,ModelMap m) {
 		logger.info("mypage: test");
 		String encptPw = 
 				new BCryptPasswordEncoder().encode(dto.getPasswd());
@@ -87,6 +88,8 @@ public class MemberController {
 		//DB연동
 		logger.info("logger:signup:{}",dto);
 		memberService.memberupdate(dto);
+		 dto = memberService.mypage(dto.getUserid());
+		m.addAttribute("login",dto);
 		return "redirect:main";
 	}
 	
