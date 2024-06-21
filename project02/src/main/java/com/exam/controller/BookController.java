@@ -55,7 +55,7 @@ public class BookController {
 		}
 		//DB연동
 		GoodsDTO gdto = new GoodsDTO(dto.getbCode(),dto.getbCategory(),dto.getbName(),dto.getbDate(),dto.getbPrice(),dto.getbInventory(),dto.getbImage());;
-		dto.setbDate(LocalDate.now());
+		gdto.setbDate(LocalDate.now());
 		logger.info("logger:signup:{}",dto);
 		String theText = dto.getTheText();
 		MultipartFile theFile = dto.getTheFile();
@@ -72,7 +72,7 @@ public class BookController {
 		
 		// 서버의 물리적인 디렉터리에 파일 저장 예:c:\\upload
 		// 파일이 저장할 경로만 알려줌
-		File f = new File("D:\\project2\\project02\\src\\main\\resources\\static\\images\\items", fileName);
+		File f = new File("C:\\springboot_study\\sts-4.22.1.RELEASE\\workspace\\bookstore_project\\project02\\src\\main\\resources\\static\\images\\items", fileName);
 		try {
 			theFile.transferTo(f);
 		} catch (IllegalStateException e) {

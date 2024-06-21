@@ -31,7 +31,7 @@
 						 			<td> ${status.count}</td>
 					                <td id="bcode">${dto.bCode}</td> 
 					                <td id="bCategory">${dto.bCategory}</td> 
-                                    <td id="bImage"><img src="images/items/${dto.bImage}" width="200"></td>
+                                    <td id="bImage"><img src="images/items/${dto.bImage}" width="20"></td>
                                     <td id="bName">${dto.bName}</td>
                                     <td id="bInventory">${dto.bInventory}</td>
                                     <td id="bPrice">${dto.bPrice}</td>
@@ -45,7 +45,6 @@
 
                   </table>
               </div>
-             <div class="btn btn-success m-5">전체삭제</div>
         </div>
     </div>
 	
