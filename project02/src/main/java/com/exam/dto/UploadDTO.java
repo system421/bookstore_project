@@ -4,8 +4,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class UploadDTO {
 	
-	String theText;
-	MultipartFile theFile;
+	private String theText;
+	private MultipartFile theFile;
 	
 	
 	

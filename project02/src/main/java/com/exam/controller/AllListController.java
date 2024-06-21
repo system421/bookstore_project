@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.exam.dto.GoodsDTO;
 import com.exam.service.GoodsService;
-
+//
 @Controller
 public class AllListController {
-	Logger logger = LoggerFactory.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	GoodsService goodsService;
 	
 	

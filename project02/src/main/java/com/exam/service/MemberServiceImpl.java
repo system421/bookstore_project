@@ -10,7 +10,7 @@ import com.exam.mapper.MemberMapper;
 @Service
 public class MemberServiceImpl implements MemberService {
 
-	MemberMapper memberMapper;
+	private MemberMapper memberMapper;
 	
 	public MemberServiceImpl(MemberMapper memberMapper) {
 		this.memberMapper = memberMapper;

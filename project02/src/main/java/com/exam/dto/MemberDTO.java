@@ -7,19 +7,19 @@ import org.apache.ibatis.type.Alias;
 @Alias("MemberDTO")
 public class MemberDTO {
 
-	String userid;
+	private String userid;
 	@Size(min = 4, message = "4글자 이상입니다.")
-	String passwd;
+	private String passwd;
 	
-	String username;
-	String post;
-	String addr1;
-	String addr2;
-	String phone1;
-	String phone2;
-	String phone3;
-	String email1;
-	String email2;
+	private String username;
+	private String post;
+	private String addr1;
+	private String addr2;
+	private String phone1;
+	private String phone2;
+	private String phone3;
+	private String email1;
+	private String email2;
 	
 	public MemberDTO() {}
 

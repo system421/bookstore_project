@@ -41,13 +41,13 @@
 	                               <a class="nav-link" href="logout">logout</a>
 	                            </li>
 	                             <li class="nav-item">
-	                               <a class="nav-link" href="mypage">mypage</a>
+	                               <a class="nav-link" href="mypage">MyPage</a>
 	                            </li>
 	                            <li class="nav-item">
 	                               <a class="nav-link" href="add_book">Book Add</a>
 	                            </li>
 	                            <li class="nav-item">
-	                               <a class="nav-link" href="AllList">Alllist</a>
+	                               <a class="nav-link" href="AllList">BookList</a>
 	                            </li>
 	                        </ul>
                       
