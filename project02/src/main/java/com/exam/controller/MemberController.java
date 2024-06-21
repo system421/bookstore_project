@@ -46,14 +46,14 @@ public class MemberController {
 		return mesg;
 	}
 	@GetMapping("/signup")
-	public String main(ModelMap m) {
+	public String signup(ModelMap m) {
 		MemberDTO dto = new MemberDTO();
 		m.addAttribute("memberDTO", dto);
 		
 		return "memberForm";
 	}
 	@PostMapping("/signup")
-	public String main(@Valid MemberDTO dto, BindingResult result) {
+	public String signup(@Valid MemberDTO dto, BindingResult result) {
 		if(result.hasErrors()) {
 			return "memberForm";
 		}
