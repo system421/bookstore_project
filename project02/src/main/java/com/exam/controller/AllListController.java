@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.exam.dto.GoodsDTO;
 import com.exam.service.GoodsService;
-//
+
 @Controller
 public class AllListController {
 	private Logger logger = LoggerFactory.getLogger(getClass());
