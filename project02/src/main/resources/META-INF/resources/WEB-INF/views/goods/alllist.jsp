@@ -3,10 +3,11 @@
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
- 
+ <script src="webjars/jquery/3.7.1/jquery.min.js"></script>
  
   <div class="TodoApp">
   <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+  
  
     <div class="container">
             <div>
@@ -40,10 +41,13 @@
 						</tr>
 						</form>
 				      </c:forEach>
+				      <br>
+				      <input type="button" class="btn btn-primary" value="home 화면으로" onclick="location.href='main'" >
 	
                     </tbody>
 
                   </table>
+				      <input type="button" class="btn btn-primary" value="home 화면으로" onclick="location.href='main'" >
               </div>
         </div>
     </div>

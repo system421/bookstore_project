@@ -45,7 +45,7 @@
 		
 			
 		});
-		
+
 	});// ready()
 
 </script>
@@ -102,7 +102,7 @@
 		  </div>
 		  <div class="col-12">
 		    <button type="submit" class="btn btn-primary">추가</button>
-		    <button type="reset" class="btn btn-primary">취소</button>
+		    <input type="button" class="btn btn-primary" value="취소" onclick="location.href='main'" >
 		  </div>
 </form:form >
 

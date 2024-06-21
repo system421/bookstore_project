@@ -27,11 +27,11 @@ import com.exam.service.GoodsService;
 import com.exam.service.MemberService;
 
 
-
+//
 @Controller
 @SessionAttributes(names = {"login"})
 public class BookController {
-	Logger logger = LoggerFactory.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	GoodsService goodsService;
 //
@@ -41,14 +41,14 @@ public class BookController {
 		this.goodsService = goodsService;
 	}
 	@GetMapping("/add_book")
-	public String main(ModelMap m) {
+	public String add_book(ModelMap m) {
 		FileDTO fdto = new FileDTO();
 		m.addAttribute("FileDTO", fdto);
 		
 		return "add_book";
 	}
 	@PostMapping("/add_book")
-	public String main(@Valid @ModelAttribute("FileDTO") FileDTO dto, BindingResult result) {
+	public String add_book(@Valid @ModelAttribute("FileDTO") FileDTO dto, BindingResult result) {
 		if(result.hasErrors()) {
 			logger.info("error:{}",result);
 			return "add_book";
@@ -88,7 +88,7 @@ public class BookController {
 	}
 	
 	@GetMapping("/Codecheck")
-	public @ResponseBody String Codecheck(@RequestParam String bCode) {
+	public @ResponseBody String codecheck(@RequestParam String bCode) {
 		String chk = goodsService.Codecheck(bCode);
 		
 		String mesg = "사용가능";

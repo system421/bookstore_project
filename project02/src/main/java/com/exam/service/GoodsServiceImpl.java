@@ -10,7 +10,7 @@ import com.exam.mapper.GoodsMapper;
 @Service
 public class GoodsServiceImpl implements GoodsService {
 	
-	GoodsMapper goodsMapper;
+	private GoodsMapper goodsMapper;
 	
 
 	public GoodsServiceImpl(GoodsMapper goodsMapper) {
