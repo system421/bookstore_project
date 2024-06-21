@@ -31,7 +31,7 @@ import com.exam.service.MemberService;
 @Controller
 @SessionAttributes(names = {"login"})
 public class BookController {
-	Logger logger = LoggerFactory.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	GoodsService goodsService;
 //

@@ -23,7 +23,7 @@ import com.exam.service.MemberService;
 @Controller
 @SessionAttributes(names = {"login"})
 public class LoginController {
-	Logger logger = LoggerFactory.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	MemberService memberService;
 	
 
